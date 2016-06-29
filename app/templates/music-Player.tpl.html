@@ -1,0 +1,51 @@
+
+<!-- Start Music Player -->
+<div class="player">
+    <!-- Start Cover Image -->
+    <figure class="player__cover">
+        <img class="cover__image" data-ng-src="{{ active.image }}" alt="Cover img" />
+    </figure>
+    <!-- End Cover Image -->
+     
+    <!-- Start Item Box -->
+    <div class="player__itemBox">
+        <div class="itemBox__head">
+            <hgroup class="head__title">
+                <h2 class="head__albumName">{{ active.artist }} Rapsody ft.</h2>
+                <h3 class="head__songName">{{ active.track }}</h3>
+            </hgroup>
+            
+            <div class="head__icon">
+                <figure class="icon__share"></figure>
+                <figure class="icon__bookmark"></figure>
+                <figure data-id="like{{ active.id }}" ng-class="active.liked == true ?'icon__like js-active':'icon__like'" class="icon__like" data-ng-click="like(active.id)"></figure>
+            </div>
+        </div>
+            
+        <div class="itemBox__progressBar">
+            <audio class="audioVoice" src="assets/audio/cover1.mp3" controls></audio>
+            <div class="progressBar__line"></div>
+        </div>
+           
+        <div class="itemBox__audio"> 
+            <div class="audio__control">
+                <button class="control__play control--big"></button>
+                
+                <button class="control__previous" data-ng-click="previous(active.id)"></button>
+                <button class="control__next" data-ng-click="next(active.id)"></button>
+            </div>
+                
+            <div class="audio__bottom">
+                <figure class="icon__retweet"></figure>
+                <figure class="icon__random"></figure>
+            </div>
+        </div>
+    </div>
+    <!-- End Item Box -->
+    
+    <script tplJs type="text/javascript" src="dist/main.min.js"></script>
+</div>
+<!-- End Music Player -->
+
+<button class="logout" data-ng-click="logoutFrm()">Logout</button>
+    

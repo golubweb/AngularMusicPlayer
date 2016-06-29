@@ -1,0 +1,131 @@
+
+.player {
+  @include border-radius(15px);
+  @include shadow(0 8px 25px -6px #a3a5a5);
+  background: #eef1f2;
+  
+  .player__cover {
+    //max-height: 155px;
+    overflow: hidden;
+    @include border-radius(15px 15px 0 0);
+    
+    .cover__image {width: 100%; display: block;}
+  }
+  
+  .player__itemBox {
+    padding: 70px 40px 15px;
+    
+    .itemBox__head {
+      width: 100%;
+      display: table;
+      
+      .head__title {
+        width: 53.5%;
+        float: left;
+        
+        .head__albumName {
+          font-size: 20px;
+          font-weight: 700;
+          padding-bottom: 12px;
+        }
+        .head__songName {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+      
+      .head__icon {
+        width: 35%;
+        float: right;
+        
+        .icon__share:before {content: "\f045";}
+        .icon__bookmark {margin: 0 16px 0;
+          &:before {content: "\f005";}
+        }
+        .icon__like {
+          &:before {content: "\f004";}
+          &.js-active {color: #fe8698;}        
+        }
+      } 
+    }
+    
+    .itemBox__progressBar {
+      margin: 45px 0 40px;
+      @include border-radius(5px);
+      background: #414141;
+      
+      audio {display: none;}
+      
+      .progressBar__line {width: 0; height: 10px; @include border-radius(5px); background: #cdd2d7;}
+    }
+    
+    .itemBox__audio {
+      width: 100%;
+      display: table;
+      
+      .audio__control {
+        float: left;
+        display: table;
+        
+        button {
+          margin-right: 4px;
+          padding: 0;
+          cursor: pointer;
+          text-align: center;
+          
+          &[class*="control__"] {
+            width: 52px;
+            height: 52px;
+            display: inline-block;
+            color: #d9d9d9;
+            @include border-radius(50%);
+            border: none;
+            background: #414141;
+            
+            &:before {
+              display: inline-block;
+              font-size: 24px;
+              font-family: $font-awesome;   
+            }
+          }
+            
+          &.control__play:before {content: "\f04b"; text-indent: 3px;}
+          &.control__pause:before {content: "\f04c"; text-indent: 3px;}
+          &.control__previous:before {content: "\f04a"; font-size: 18px; text-indent: -5px;}
+          &.control__next:before {content: "\f04e"; font-size: 18px; text-indent: 5px;}
+          
+          &.control--big {width: 72px; height: 72px;}
+          
+          &:last-child {margin: 0;}
+        }
+      }
+      
+      .audio__bottom {
+        float: right;
+        padding: 22px 0;
+        
+        .icon__retweet:before  {content: "\f079";}
+        .icon__random {margin-left: 20px;
+          &:before {content: "\f074";}
+        }
+      }
+    } 
+  }
+  
+  [class*="icon__"] {
+    width: 30px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    color: #d2d7db;
+    
+    &:before {
+      display: inline-block;
+      font-size: 28px;
+      font-family: $font-awesome;
+    }
+    
+    &:hover {color: #fe8698;}
+  }
+}

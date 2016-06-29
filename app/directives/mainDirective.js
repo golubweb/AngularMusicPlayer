@@ -1,15 +1,18 @@
 /***************************
 *
 * @author: Darko Golubovic
-* @date: 27-05-2016
+* @date: 29-05-2016
 *
 ***************************/
-myApp.directive('div', ['$templateRequest', function($templateRequest) {
+myApp.directive('tplJs', ['$parse', '$compile', function($parse, $compile){
 	return {
-		restrict: 'E',
-		scope: true,
-		link: function (scope, element, attr) {
-			
+		restrict: 'A',
+		terminal: true,
+		link: function(scope, element, attr){
+			if(element == 'script'){
+				var domElem = '<script src="' + attr.ngSrc + '" type="text/javascript"></script>';
+				$(element).append($compile(domElem)(scope));
+			}
 		}
 	};
 }]);

@@ -138,36 +138,14 @@ $retina-suffix: '@2x';
 
 // @include border-radius(10px);
 
-@mixin content-section {
-  width: 1000px;
-  display: table;
-  margin: 0 auto;
+
+@mixin shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
 }
 
-// @include content-section;
-
-@mixin content-row {
-  width: 1000px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-// @include content-row;
-
-@mixin table {
-  width: 100%;
-  display: table;
-}
-
-// @include table;
-
-
-@mixin table-auto-margin {
-  display: table;
-  margin: 0 auto;
-}
-
-// @include table-auto-margin;
+// @include shadow(0 8px 6px -6px);
 
 @mixin nth-child-margin($n, $margin) {
   &:nth-child(#{$n}) {

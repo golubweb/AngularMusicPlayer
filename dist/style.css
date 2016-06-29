@@ -47,9 +47,14 @@ h1, h2, h3, h4, h5, h6, ul, li, em, pre, code {
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, button {
   display: block; }
 
+* {
+  outline: 0; }
+
 /*=========// Body */
 body {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  background: #d2d5d6;
+  white-space: 0; }
 
 /*=========// Box Model */
 * {
@@ -68,17 +73,219 @@ a {
 p {
   font-family: "Open Sans", sans-serif; }
 
-select::-ms-expand {
-  display: none; }
-
-/*=========// Select */
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; }
-
 input::-moz-focus-inner {
   border: 0;
   padding: 0; }
+
+/*=========// Hedings */
+h1, h2, h3 {
+  ont-family: "Open Sans", sans-serif;
+  color: #455569;
+  line-height: normal; }
+
+/*=========// FontAwesome Font */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../assets/fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("../assets/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("../assets/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("../assets/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("../assets/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("../assets/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/*=========// FontAwesome Icon */
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0); }
+
+.main {
+  width: 435px;
+  margin: 50px auto; }
+  .main .logout {
+    padding: 10px 15px;
+    margin-top: 15px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 8px 25px -6px #a3a5a5;
+    -moz-box-shadow: 0 8px 25px -6px #a3a5a5;
+    box-shadow: 0 8px 25px -6px #a3a5a5;
+    background: #414141; }
+    .main .logout:hover {
+      opacity: 0.8; }
+
+.player {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 8px 25px -6px #a3a5a5;
+  -moz-box-shadow: 0 8px 25px -6px #a3a5a5;
+  box-shadow: 0 8px 25px -6px #a3a5a5;
+  background: #eef1f2; }
+  .player .player__cover {
+    overflow: hidden;
+    -webkit-border-radius: 15px 15px 0 0;
+    -moz-border-radius: 15px 15px 0 0;
+    -ms-border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0 0; }
+    .player .player__cover .cover__image {
+      width: 100%;
+      display: block; }
+  .player .player__itemBox {
+    padding: 70px 40px 15px; }
+    .player .player__itemBox .itemBox__head {
+      width: 100%;
+      display: table; }
+      .player .player__itemBox .itemBox__head .head__title {
+        width: 53.5%;
+        float: left; }
+        .player .player__itemBox .itemBox__head .head__title .head__albumName {
+          font-size: 20px;
+          font-weight: 700;
+          padding-bottom: 12px; }
+        .player .player__itemBox .itemBox__head .head__title .head__songName {
+          font-size: 16px;
+          font-weight: 600; }
+      .player .player__itemBox .itemBox__head .head__icon {
+        width: 35%;
+        float: right; }
+        .player .player__itemBox .itemBox__head .head__icon .icon__share:before {
+          content: "\f045"; }
+        .player .player__itemBox .itemBox__head .head__icon .icon__bookmark {
+          margin: 0 16px 0; }
+          .player .player__itemBox .itemBox__head .head__icon .icon__bookmark:before {
+            content: "\f005"; }
+        .player .player__itemBox .itemBox__head .head__icon .icon__like:before {
+          content: "\f004"; }
+        .player .player__itemBox .itemBox__head .head__icon .icon__like.js-active {
+          color: #fe8698; }
+    .player .player__itemBox .itemBox__progressBar {
+      margin: 45px 0 40px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      border-radius: 5px;
+      background: #414141; }
+      .player .player__itemBox .itemBox__progressBar audio {
+        display: none; }
+      .player .player__itemBox .itemBox__progressBar .progressBar__line {
+        width: 0;
+        height: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        border-radius: 5px;
+        background: #cdd2d7; }
+    .player .player__itemBox .itemBox__audio {
+      width: 100%;
+      display: table; }
+      .player .player__itemBox .itemBox__audio .audio__control {
+        float: left;
+        display: table; }
+        .player .player__itemBox .itemBox__audio .audio__control button {
+          margin-right: 4px;
+          padding: 0;
+          cursor: pointer;
+          text-align: center; }
+          .player .player__itemBox .itemBox__audio .audio__control button[class*="control__"] {
+            width: 52px;
+            height: 52px;
+            display: inline-block;
+            color: #d9d9d9;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%;
+            border: none;
+            background: #414141; }
+            .player .player__itemBox .itemBox__audio .audio__control button[class*="control__"]:before {
+              display: inline-block;
+              font-size: 24px;
+              font-family: "FontAwesome"; }
+          .player .player__itemBox .itemBox__audio .audio__control button.control__play:before {
+            content: "\f04b";
+            text-indent: 3px; }
+          .player .player__itemBox .itemBox__audio .audio__control button.control__pause:before {
+            content: "\f04c";
+            text-indent: 3px; }
+          .player .player__itemBox .itemBox__audio .audio__control button.control__previous:before {
+            content: "\f04a";
+            font-size: 18px;
+            text-indent: -5px; }
+          .player .player__itemBox .itemBox__audio .audio__control button.control__next:before {
+            content: "\f04e";
+            font-size: 18px;
+            text-indent: 5px; }
+          .player .player__itemBox .itemBox__audio .audio__control button.control--big {
+            width: 72px;
+            height: 72px; }
+          .player .player__itemBox .itemBox__audio .audio__control button:last-child {
+            margin: 0; }
+      .player .player__itemBox .itemBox__audio .audio__bottom {
+        float: right;
+        padding: 22px 0; }
+        .player .player__itemBox .itemBox__audio .audio__bottom .icon__retweet:before {
+          content: "\f079"; }
+        .player .player__itemBox .itemBox__audio .audio__bottom .icon__random {
+          margin-left: 20px; }
+          .player .player__itemBox .itemBox__audio .audio__bottom .icon__random:before {
+            content: "\f074"; }
+  .player [class*="icon__"] {
+    width: 30px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    color: #d2d7db; }
+    .player [class*="icon__"]:before {
+      display: inline-block;
+      font-size: 28px;
+      font-family: "FontAwesome"; }
+    .player [class*="icon__"]:hover {
+      color: #fe8698; }
+
+.login {
+  padding: 70px 40px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 8px 25px -6px #a3a5a5;
+  -moz-box-shadow: 0 8px 25px -6px #a3a5a5;
+  box-shadow: 0 8px 25px -6px #a3a5a5;
+  background: #eef1f2; }
+  .login input {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    color: #7e8287;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #fbfbfb;
+    background: #cdd2d7; }
+    .login input.login__submit {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      background: #414141; }
+      .login input.login__submit:hover {
+        opacity: 0.8; }
+    .login input .login__msg {
+      color: #455569;
+      font-size: 13px; }
 
 /*# sourceMappingURL=style.css.map */

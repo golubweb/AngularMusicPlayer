@@ -5,8 +5,11 @@
 // BASE ==================================
 @import 'base/reset';
 @import 'base/global';
+@import 'base/typography';
 
 // LAYOUT ================================
 @import 'layout/page';
+@import 'layout/player';
+@import 'layout/login';
 
 

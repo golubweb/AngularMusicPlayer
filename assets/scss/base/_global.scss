@@ -1,7 +1,11 @@
 @import '../helpers/variables';
 
 /*=========// Body */
-body {font-family: $font-open;}
+body {
+  font-family: $font-open;
+  background: #d2d5d6;
+  white-space: 0;
+}
 
 /*=========// Box Model */
 * {
@@ -20,11 +24,4 @@ a {
 
 /*=========// Global Paragraf */
 p {font-family: $font-open;}
-
-select::-ms-expand {
-    display: none;
-}
-
-/*=========// Select */
-select {-webkit-appearance: none; -moz-appearance: none; appearance: none;}
 input::-moz-focus-inner {border: 0; padding: 0;}

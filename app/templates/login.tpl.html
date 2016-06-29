@@ -1,0 +1,27 @@
+
+<!-- Start Login panel -->
+<div class="login">
+    <form name="frmUsr" data-ng-submit="loginFrm(usr.email, usr.pass)">
+        <input
+            class="login__email"
+            type="email" 
+            placeholder="Email"
+            name="user_email"
+            ng-model="usr.email"
+            required
+        />
+
+        <input
+            class="login__pass"
+            type="password" 
+            placeholder="Password" 
+            name="user_pass"
+            ng-model="usr.pass"
+            required
+        />
+
+        <input class="login__submit" type="submit" value="Login" data-ng-disabled="frmUsr.$invalid" /> 
+        <p class="login__msg">{{ msgText }}</p>
+    </form>
+</div>
+<!-- End Login panel -->

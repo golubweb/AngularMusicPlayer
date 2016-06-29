@@ -1,3 +1,20 @@
+
 .main {
+  width: 435px;
+  margin: 50px auto;
   
+  .logout {
+    padding: 10px 15px;
+    margin-top: 15px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    @include border-radius(5px);
+    @include shadow(0 8px 25px -6px #a3a5a5);
+    background: #414141;
+    
+    &:hover {opacity: 0.8;}
+  } 
 }
